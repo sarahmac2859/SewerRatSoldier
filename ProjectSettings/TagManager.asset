@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Rats
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Obstacles
+  - Rats
+  - Player
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: 'Background '
+    uniqueID: 271041077
+    locked: 0
+  - name: 'Bullet '
+    uniqueID: 3301243893
+    locked: 0
+  - name: 'Enemies '
+    uniqueID: 2830522259
+    locked: 0
+  - name: 'Player Bounds '
+    uniqueID: 3493599733
+    locked: 0
+  - name: 'Sewers '
+    uniqueID: 2112792715
+    locked: 0
+  - name: 'Player '
+    uniqueID: 971605229
+    locked: 0
