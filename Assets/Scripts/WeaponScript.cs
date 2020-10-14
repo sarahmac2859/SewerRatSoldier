@@ -13,6 +13,7 @@ public class WeaponScript : MonoBehaviour
     /// Projectile prefab for shooting
     /// </summary>
     public Transform shotPrefab;
+    public Rigidbody2D rb;
 
     /// <summary>
     /// Cooldown in seconds between two shots
@@ -28,6 +29,8 @@ public class WeaponScript : MonoBehaviour
     void Start()
     {
         shootCooldown = 0f;
+        rb = GetComponent<Rigidbody2D>();
+        rb.velocity = new Vector2(shootingRate, rb.velocity.y);
     }
 
     void Update()
@@ -52,13 +55,13 @@ public class WeaponScript : MonoBehaviour
             shootCooldown = shootingRate;
 
             // Create a new shot
-            var shotTransform = Instantiate(shotPrefab) as Transform;
+            var shotTransform = Instantiate(shotPrefab, transform.position, Quaternion.identity);
 
             // Assign position
             shotTransform.position = transform.position;
 
             // The is enemy property
-            BulletScript shot = shotTransform.gameObject.GetComponent<BulletScript>();
+            ShotScript shot = shotTransform.gameObject.GetComponent<ShotScript>();
             if (shot != null)
             {
                 shot.isEnemyShot = isEnemy;
@@ -68,7 +71,14 @@ public class WeaponScript : MonoBehaviour
             EnemyScript move = shotTransform.gameObject.GetComponent<EnemyScript>();
             if (move != null)
             {
-                move.direction = this.transform.right; // towards in 2D space is the right of the sprite
+                if (Input.GetAxis("Horizontal") > 0)
+                {
+                    move.direction = this.transform.right; // towards in 2D space is the right of the sprite
+                }
+                else if (Input.GetAxis("Horizontal") < 0)
+                {
+                    move.direction = this.transform.right*-1; // towards in 2D space is the right of the sprite
+                }
             }
         }
     }
@@ -84,4 +94,3 @@ public class WeaponScript : MonoBehaviour
         }
     }
 }
-

@@ -33,7 +33,7 @@ public class HealthScript : MonoBehaviour
     void OnTriggerEnter2D(Collider2D otherCollider)
     {
         // Is this a shot?
-        BulletScript shot = otherCollider.gameObject.GetComponent<BulletScript>();
+        ShotScript shot = otherCollider.gameObject.GetComponent<ShotScript>();
         if (shot != null)
         {
             // Avoid friendly fire

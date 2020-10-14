@@ -19,6 +19,7 @@ public class EnemyScript : MonoBehaviour
 
     private Vector2 movement;
     private Rigidbody2D rigidbodyComponent;
+    
 
     void Update()
     {
